@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Pendaftaran Mahasiswa Baru</title>
+    <style>
+        body {
+            margin: 20px; /* Atur margin sesuai kebutuhan */
+            border: 1px solid #ccc; /* Warna dan ketebalan border dapat disesuaikan */
+            padding: 20px; /* Atur padding sesuai kebutuhan */
+        }
+        .form-group {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .form-group label {
+            display: inline-block;
+            width: 250px; /* Adjust as needed */
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        #alamat, #alamat_sekolah_asal {
+            width: 60%;
+            height: 100px;
+        }
+        #no_telp {
+            width: 60%;
+        }
+        #sekolah_asal {
+            width: 30%;
+        }
+        /* Custom CSS to adjust label positions */
+        .form-group .inline-label {
+            width: 59px;
+        }
+        /* Custom CSS to adjust radio button spacing */
+        input[type="radio"] {
+            margin-right: 5px; /* Adjust as needed */
+        }
+        .container {
+            margin-left: 10px;
+        }
+        .button2 {
+            margin-left: 22%;
+        }
+    </style>
+</head>
+<body>
+    <h3>- Form Pendaftaran Mahasiswa Baru -</h3>
+    <form>
+        <form method="POST" action="proses_pendaftaran.php">
+            <!-- Isi formulir tetap sama -->
+        </form>        
+        <div class="form-group">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama">
+        </div>
+        <div class="form-group">
+            <label for="tempat">Tempat Tanggal Lahir:</label>
+            <input type="text" id="tempat" name="tempat">
+            <input type="date" id="tanggal" name="tanggal" min="1989-01-01" max="1994-12-31" pattern="\d{2}-\d{2}-\d{4}">
+        </div>
+        <div class="form-group">
+            <label for="agama">Agama:</label>
+            <select id="agama" name="agama">
+                <option value="islam">Islam</option>
+                <option value="kristen">Kristen</option>
+                <option value="katolik">Katolik</option>
+                <option value="hindu">Hindu</option>
+                <option value="budha">Budha</option>
+                <option value="konghucu">Konghucu</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="jk">Jenis Kelamin:</label>
+                <input type="radio" id="laki-laki" name="jenis_kelamin" value="laki-laki">
+                <label class="inline-label" for="laki-laki">Laki-laki</label>
+                <div class="container">
+                <input type="radio" id="perempuan" name="jenis_kelamin" value="perempuan">
+                <label class="inline-label" for="perempuan">Perempuan</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ijazah">No. Ijazah SMA/MA:</label>
+            <input type="text" id="ijazah" name="ijazah">
+        </div>
+        <div class="form-group">
+            <label for="foto">Foto (Ukuran File Maks. 20 KB):</label>
+            <input type="file" id="foto" name="foto">
+        </div>
+        <div class="form-group">
+            <label for="nama_ayah">Nama Ayah:</label>
+            <input type="text" id="nama_ayah" name="nama_ayah">
+        </div>
+        <div class="form-group">
+            <label for="nama_ibu">Nama Ibu:</label>
+            <input type="text" id="nama_ibu" name="nama_ibu">
+        </div>
+        <div class="form-group">
+            <label for="alamat">Alamat Rumah:</label>
+            <textarea id="alamat" name="alamat"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="no_telp">No. Telp:</label>
+            <input type="text" id="no_telp" name="no_telp">
+        </div>
+        <div class="form-group">
+            <label for="sekolah_asal">Nama Sekolah Asal:</label>
+            <input type="text" id="sekolah_asal" name="sekolah_asal">
+        </div>
+        <div class="form-group">
+            <label for="alamat_sekolah_asal">Alamat Sekolah Asal:</label>
+            <textarea id="alamat_sekolah_asal" name="alamat_sekolah_asal"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="jurusan">Jurusan:</label>
+            <select id="jurusan" name="jurusan">
+                <option value="">-- Pilih --</option>
+                <option value="Komputerisasi Akuntansi">Teknologi Rekayasa Perangkat</option>
+                <option value="Komputerisasi Akuntansi">Komputerisasi Akuntansi</option>
+                <option value="Administrasi Bisnis">Administrasi Bisnis</option>
+                <option value="Teknik Komputer Kontrol">Teknik Komputer Kontrol</option>
+                <option value="Teknik Listrik">Teknik Listrik</option>
+                <option value="Mesin Otomotif">Mesin Otomotif</option>
+                <option value="Perkeretaapian">Perkeretaapian</option>
+                <option value="Teknologi Informasi">Teknologi Informasi</option>
+                <option value="Akuntansi">Akuntansi</option>
+            </select>
+        </div>        
+        <div class="form-group">
+            <label for="jk">Tahu informasi ini dari:</label>
+            <input type="radio" id="Koran" name="Tahu_informasi_ini_dari" value="Koran">
+            <label class="inline-label" for="Koran">Koran</label>
+            <input type="radio" id="Website" name="Tahu_informasi_ini_dari" value="Website">
+            <label class="inline-label" for="Website">Website</label>
+            <input type="radio" id="Televisi" name="Tahu_informasi_ini_dari" value="Televisi">
+            <label class="inline-label" for="Televisi">Televisi</label>
+            <input type="radio" id="Radio" name="Tahu_informasi_ini_dari" value="Radio">
+            <label class="inline-label" id="Radio" for="Radio">Radio</label>
+            <input type="radio" id="Teman" name="Tahu_informasi_ini_dari" value="Teman">
+            <label class="inline-label" id="Radio" for="Radio">Teman</label>
+        </div>
+        <<div class="form-group">
+            <div class="button2">
+                <button type="button" onclick="resetForm()">Batal</button>
+                <button type="submit">Daftar</button>
+            </div>
+        </div>        
+    </form>
+    <script>
+        function resetForm() {
+            document.querySelector('form').reset();
+            alert("Anda membatalkan pendaftaran.");
+        }
+    </script>
+    
+    <div id="footer">
+        copyright@<i>Mohammad Dimas Bahrul Ikhwani_234311017</i>
+    </div>
+
+</body>
+</html>
